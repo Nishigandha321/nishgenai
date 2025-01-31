@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Musk Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #factDisplay{
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Elon Musk Facts</h1>
+        <p id="factDisplay">Click the button to get a fact!</p>
+        <button id="factButton">Get Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Elon Musk was born in Pretoria, South Africa, on June 28, 1971.",
+            "He co-founded the electronic payment firm X.com, which later became PayPal.",
+            "Musk is the founder, CEO, and lead designer of SpaceX, a private aerospace manufacturer.",
+            "He is also the CEO and product architect of Tesla, Inc., an electric vehicle and clean energy company.",
+            "Musk has a goal to reduce global warming through sustainable energy production and consumption.",
+            "He is aiming to establish a human colony on Mars.",
+            "He founded The Boring Company, an infrastructure and tunnel construction company.",
+            "Musk co-founded Neuralink, a neurotechnology company focused on developing implantable brain-machine interfaces.",
+            "He is known for his ambitious and sometimes controversial views on technology, artificial intelligence, and societal issues.",
+            "Musk has been named one of the most influential people in the world by Time Magazine."
+        ];
+
+        const factDisplay = document.getElementById('factDisplay');
+        const factButton = document.getElementById('factButton');
+
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
